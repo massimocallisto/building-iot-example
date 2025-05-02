@@ -58,7 +58,9 @@ Once the application is running, you can access:
 - `GET /floor/{floor_id}/devices`: Get all devices on a specific floor
 - `GET /floor/{floor_id}/device/{device_id}`: Get specific device details
 - `POST /floor/{floor_id}/device`: Add a new device to a floor
-- `PUT /floor/{floor_id}/device/{device_id}/telemetry`: Update device telemetry
+- `DELETE /floor/{floor_id}/device/{device_id}`: Delete a device of a floor
+- `PUT /floor/{floor_id}/device/{device_id}`: Update device description
+- `PUT /floor/{floor_id}/telemetry/{device_id}`: Update device telemetry
 
 ## Device Types
 
