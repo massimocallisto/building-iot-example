@@ -1,23 +1,15 @@
 # Building IoT Management System
 
-A FastAPI-based REST API for managing IoT devices in a building. The system allows you to manage devices across different floors in an open space layout.
+A FastAPI-based API for managing IoT devices in a building infrastructure.
 
-## Features
+## Prerequisites
 
-- Floor management
-- Device management (sensors and actuators)
-- Telemetry data handling
-- Persistent storage using JSON file
-- RESTful API design
+- Docker and Docker Compose installed on your system
+- Git (optional, for cloning the repository)
 
-## Requirements
+## Getting Started
 
-- Python 3.10+
-- FastAPI
-- Uvicorn
-- Pydantic
-
-## Running with Docker
+### Running with Docker
 
 1. Clone or download this repository (if you haven't already):
    ```bash
