@@ -16,6 +16,7 @@ class DeviceType(str, Enum):
 class Device(BaseModel):
     id: str
     type: DeviceType
+    description: str
     telemetry: Dict[str, Any] = Field(default_factory=dict)
 
 class Floor(BaseModel):
@@ -92,18 +93,44 @@ async def get_device(floor_id: str, device_id: str):
     return device
 
 @app.post("/floor/{floor_id}/device", response_model=Device)
-async def add_device(floor_id: str, device_type: DeviceType, device_id: str):
+async def add_device(floor_id: str, device_type: DeviceType, device_id: str, device_description: str):
     floor = next((f for f in building.floors if f.id == floor_id), None)
     if not floor:
         raise HTTPException(status_code=400, detail="Invalid floor id")
     # Check if device ID already exists
     if any(d.id == device_id for d in floor.devices):
         raise HTTPException(status_code=400, detail="Device ID already exists on this floor")
-    new_device = Device(id=device_id, type=device_type)
+    new_device = Device(id=device_id, type=device_type, description=device_description)
     floor.devices.append(new_device)
     return new_device
 
-@app.put("/floor/{floor_id}/device/{device_id}/telemetry", response_model=Device)
+
+@app.delete("/floor/{floor_id}/device/{device_id}", response_model=MessageResponse)
+async def delete_device(floor_id: str, device_id: str):
+    """Delete a specific device from a floor"""
+    floor = next((f for f in building.floors if f.id == floor_id), None)
+    if not floor:
+        raise HTTPException(status_code=400, detail="Invalid floor id")
+    device = next((d for d in floor.devices if d.id == device_id), None)
+    if not device:
+        raise HTTPException(status_code=404, detail="Device not found")
+    floor.devices.remove(device)
+    return {"message": f"Device {device_id} deleted successfully"}
+
+
+@app.put("/floor/{floor_id}/device/{device_id}", response_model=Device)
+async def update_device_description(floor_id: str, device_id: str, description: str):
+    floor = next((f for f in building.floors if f.id == floor_id), None)
+    if not floor:
+        raise HTTPException(status_code=400, detail="Invalid floor id")
+    device = next((d for d in floor.devices if d.id == device_id), None)
+    if not device:
+        raise HTTPException(status_code=404, detail="Device not found")
+    device.description = description
+    return device
+
+
+@app.put("/floor/{floor_id}/telemetry/{device_id}", response_model=Device)
 async def update_device_telemetry(floor_id: str, device_id: str, telemetry: Dict[str, Any]):
     floor = next((f for f in building.floors if f.id == floor_id), None)
     if not floor:
