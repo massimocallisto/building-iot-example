@@ -51,23 +51,171 @@ Once the application is running, you can access:
 
 ## API Endpoints
 
-- `GET /`: Welcome message
-- `GET /building`: Get building information
-- `GET /floors`: List all floors
-- `GET /floor/{floor_id}`: Get specific floor details
-- `GET /floor/{floor_id}/devices`: Get all devices on a specific floor
-- `GET /floor/{floor_id}/device/{device_id}`: Get specific device details
-- `POST /floor/{floor_id}/device`: Add a new device to a floor
-- `DELETE /floor/{floor_id}/device/{device_id}`: Delete a device of a floor
-- `PUT /floor/{floor_id}/device/{device_id}`: Update device description
-- `PUT /floor/{floor_id}/telemetry/{device_id}`: Update device telemetry
+### Root
+- `GET /`
+  - Returns a welcome message
+  - Response Type: `MessageResponse`
+  ```json
+  {
+      "message": "string"  
+  }
+  ```
+  - Example Response:
+  ```json
+  {
+      "message": "Building IoT Management System"
+  }
+  ```
+
+### Building Management
+- `GET /building`
+  - Get building information including all floors and devices
+  - Response Type: `Building`
+  ```json
+  {
+    "name": "string",
+    "floors": [
+      {
+        "id": "string",
+        "devices": [
+          {
+            "id": "string",
+            "type": "presence_sensor",
+            "description": "string",
+            "telemetry": {}
+          }
+        ]
+      }
+    ],
+    "address": "string"
+  }
+
+### Floor Management
+- `GET /floors`
+  - Get all floors with their devices
+  - Response Type: `Array<Floor>`
+  ```json
+  [
+    {
+      "id": "string",
+      "devices": [
+        {
+          "id": "string",
+          "type": "presence_sensor",
+          "description": "string",
+          "telemetry": {}
+        }
+      ]
+    }
+  ]
+  ```
+
+
+- `GET /floor/{floor_id}`
+  - Get specific floor and its devices
+  - Path Parameter: `floor_id` (string)
+  - Response Type: `Floor`
+  - Error: 400 if floor not found
+  ```json
+  {
+    "id": "string",
+    "devices": [
+      {
+        "id": "string",
+        "type": "presence_sensor",
+        "description": "string",
+        "telemetry": {}
+      }
+    ]
+  }
+  ```
+
+### Device Management
+- `GET /floor/{floor_id}/devices`
+  - Get all devices on a specific floor
+  - Path Parameter: `floor_id` (string)
+  - Response Type: `Array<Device>`
+  - Error: 400 if floor not found
+  ```json
+  [
+    {
+      "id": "string",
+      "type": "presence_sensor",
+      "description": "string",
+      "telemetry": {}
+    }
+  ]
+  ```
+
+
+- `GET /floor/{floor_id}/device/{device_id}`
+  - Get a specific device on a floor
+  - Path Parameters:
+    - `floor_id` (string)
+    - `device_id` (string)
+  - Response Type: `Device`
+  - Errors:
+    - 400 if floor not found
+    - 404 if device not found
+  ```json
+  {
+    "id": "string",
+    "type": "presence_sensor",
+    "description": "string",
+    "telemetry": {}
+  }
+  ```
+
+
+- `POST /floor/{floor_id}/device`
+  - Add a new device to a floor
+  - Path Parameter: `floor_id` (string)
+  - Query Parameters:
+    - `device_type` (DeviceType: "presence_sensor" | "light_actuator")
+    - `device_id` (string)
+  - Response Type: `Device`
+  - Errors:
+    - 400 if floor not found
+    - 400 if device ID already exists
+  ```json
+  {
+    "id": "string",
+    "type": "presence_sensor",
+    "description": "string",
+    "telemetry": {}
+  }
+  ```
+
+- `PUT /floor/{floor_id}/device/{device_id}/telemetry`
+  - Update device telemetry data
+  - Path Parameters:
+    - `floor_id` (string)
+    - `device_id` (string)
+  - Request Body: JSON object with telemetry data
+    ```json
+    {
+        "device_id" : "pir75",
+        "device_type" : "presence_sensor",
+        "fw_version" : "1..0.1",
+        "presence_status": true,
+        "timestamp": "2023-10-25T14:30:00Z",
+        "battery_level" : 3.6
+    }
+    ```
+  - Response Type: `Device`
+  - Errors:
+    - 400 if floor not found
+    - 404 if device not found
 
 ## Device Types
-
-The system supports two types of devices:
+The system supports the following device types (enum `DeviceType`):
 - `presence_sensor`
 - `light_actuator`
 
 ## Development
 
 To make changes to the code while the container is running, simply edit the files locally. The changes will be reflected in the container thanks to the volume mounting configuration in docker-compose.yml.
+
+## Data Storage
+
+The application uses in-memory storage and initializes with 5 empty floors (IDs: "1" through "5"). Data will be reset when the application restarts.

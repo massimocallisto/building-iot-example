@@ -1,0 +1,16 @@
+{
+  "workflows": [
+    {
+      "workflowName": "monitoraggio_Workflow",
+      "workflowFilename": "simple_Building_Workflow.json"
+    }
+  ],
+  "producers": [
+    {
+      "type": "mqtt",
+      "broker.server": "tcp://broker.emqx.io",
+      "broker.port": 1883,
+      "clientId": "SAMPLEClient_MonitoraggioIoT"
+    }
+  ]
+}

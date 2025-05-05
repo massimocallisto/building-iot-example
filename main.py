@@ -47,7 +47,7 @@ app = FastAPI(title="Building IoT Management")
 
 # In-memory storage
 building = Building(floors=[
-    Floor(id=str(i)) for i in range(1, 6)
+    Floor(id="piano" + str(i)) for i in range(0, 15)
 ])
 
 @app.get("/", response_model=MessageResponse)
@@ -92,7 +92,7 @@ async def get_device(floor_id: str, device_id: str):
         raise HTTPException(status_code=404, detail="Device not found")
     return device
 
-@app.post("/floor/{floor_id}/device", response_model=Device)
+@app.put("/floor/{floor_id}/device", response_model=Device)
 async def add_device(floor_id: str, device_type: DeviceType, device_id: str, device_description: str):
     floor = next((f for f in building.floors if f.id == floor_id), None)
     if not floor:
@@ -118,7 +118,7 @@ async def delete_device(floor_id: str, device_id: str):
     return {"message": f"Device {device_id} deleted successfully"}
 
 
-@app.put("/floor/{floor_id}/device/{device_id}", response_model=Device)
+@app.post("/floor/{floor_id}/device/{device_id}", response_model=Device)
 async def update_device_description(floor_id: str, device_id: str, description: str):
     floor = next((f for f in building.floors if f.id == floor_id), None)
     if not floor:
@@ -130,7 +130,7 @@ async def update_device_description(floor_id: str, device_id: str, description: 
     return device
 
 
-@app.put("/floor/{floor_id}/telemetry/{device_id}", response_model=Device)
+@app.post("/floor/{floor_id}/telemetry/{device_id}", response_model=Device)
 async def update_device_telemetry(floor_id: str, device_id: str, telemetry: Dict[str, Any]):
     floor = next((f for f in building.floors if f.id == floor_id), None)
     if not floor:
