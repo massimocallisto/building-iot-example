@@ -1,11 +1,7 @@
-version: '3.8'
+version: '3'
 
 services:
-  api:
-    build: .
+  iot-app:
+    image: docker.io/massimocallisto/building-iot-example:1.0.0
     ports:
-      - "8000:8000"
-    volumes:
-      - .:/app
-    environment:
-      - PYTHONUNBUFFERED=1
+      - "8080:8080"

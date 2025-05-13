@@ -9,15 +9,15 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano1/device/presence/pir64"
+          "topic": "building_iot/piano1/device/presence/pir38"
         }
       },
       "config": [
         {
-          "device": "pir64",
+          "device": "pir38",
           "tz": "now()",
           "presence": "integer(0, 1)",
-          "secret": "#23FFE1"
+          "secret": "#4ADBAB"
         }
       ]
     },
@@ -25,15 +25,15 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano1/device/light/light13"
+          "topic": "building_iot/piano1/device/light/light86"
         }
       },
       "config": [
         {
-          "device": "light13",
+          "device": "light86",
           "tz": "now()",
           "light": "boolean()",
-          "secret": "#53B23B"
+          "secret": "#C086B7"
         }
       ]
     },
@@ -41,167 +41,7 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano2/device/presence/pir10"
-        }
-      },
-      "config": [
-        {
-          "device": "pir10",
-          "tz": "now()",
-          "presence": "integer(0, 1)",
-          "secret": "#B23C8E"
-        }
-      ]
-    },
-    {
-      "duration": 0,
-      "producerConfig": {
-        "mqtt": {
-          "topic": "building_iot/piano2/device/light/light83"
-        }
-      },
-      "config": [
-        {
-          "device": "light83",
-          "tz": "now()",
-          "light": "boolean()",
-          "secret": "#4D4F16"
-        }
-      ]
-    },
-    {
-      "duration": 0,
-      "producerConfig": {
-        "mqtt": {
-          "topic": "building_iot/piano3/device/presence/pir51"
-        }
-      },
-      "config": [
-        {
-          "device": "pir51",
-          "tz": "now()",
-          "presence": "integer(0, 1)",
-          "secret": "#5A5D89"
-        }
-      ]
-    },
-    {
-      "duration": 0,
-      "producerConfig": {
-        "mqtt": {
-          "topic": "building_iot/piano3/device/light/light66"
-        }
-      },
-      "config": [
-        {
-          "device": "light66",
-          "tz": "now()",
-          "light": "boolean()",
-          "secret": "#2C4566"
-        }
-      ]
-    },
-    {
-      "duration": 0,
-      "producerConfig": {
-        "mqtt": {
-          "topic": "building_iot/piano4/device/presence/pir79"
-        }
-      },
-      "config": [
-        {
-          "device": "pir79",
-          "tz": "now()",
-          "presence": "integer(0, 1)",
-          "secret": "#245D65"
-        }
-      ]
-    },
-    {
-      "duration": 0,
-      "producerConfig": {
-        "mqtt": {
-          "topic": "building_iot/piano4/device/light/light18"
-        }
-      },
-      "config": [
-        {
-          "device": "light18",
-          "tz": "now()",
-          "light": "boolean()",
-          "secret": "#0BDF24"
-        }
-      ]
-    },
-    {
-      "duration": 0,
-      "producerConfig": {
-        "mqtt": {
-          "topic": "building_iot/piano5/device/presence/pir68"
-        }
-      },
-      "config": [
-        {
-          "device": "pir68",
-          "tz": "now()",
-          "presence": "integer(0, 1)",
-          "secret": "#99AC01"
-        }
-      ]
-    },
-    {
-      "duration": 0,
-      "producerConfig": {
-        "mqtt": {
-          "topic": "building_iot/piano5/device/light/light19"
-        }
-      },
-      "config": [
-        {
-          "device": "light19",
-          "tz": "now()",
-          "light": "boolean()",
-          "secret": "#F4261D"
-        }
-      ]
-    },
-    {
-      "duration": 0,
-      "producerConfig": {
-        "mqtt": {
-          "topic": "building_iot/piano6/device/presence/pir58"
-        }
-      },
-      "config": [
-        {
-          "device": "pir58",
-          "tz": "now()",
-          "presence": "integer(0, 1)",
-          "secret": "#AEDCD5"
-        }
-      ]
-    },
-    {
-      "duration": 0,
-      "producerConfig": {
-        "mqtt": {
-          "topic": "building_iot/piano6/device/light/light41"
-        }
-      },
-      "config": [
-        {
-          "device": "light41",
-          "tz": "now()",
-          "light": "boolean()",
-          "secret": "#71ADF7"
-        }
-      ]
-    },
-    {
-      "duration": 0,
-      "producerConfig": {
-        "mqtt": {
-          "topic": "building_iot/piano7/device/presence/pir62"
+          "topic": "building_iot/piano2/device/presence/pir62"
         }
       },
       "config": [
@@ -209,7 +49,7 @@
           "device": "pir62",
           "tz": "now()",
           "presence": "integer(0, 1)",
-          "secret": "#E2B826"
+          "secret": "#3574E8"
         }
       ]
     },
@@ -217,15 +57,15 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano7/device/light/light93"
+          "topic": "building_iot/piano2/device/light/light71"
         }
       },
       "config": [
         {
-          "device": "light93",
+          "device": "light71",
           "tz": "now()",
           "light": "boolean()",
-          "secret": "#0B304A"
+          "secret": "#0197CD"
         }
       ]
     },
@@ -233,15 +73,15 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano8/device/presence/pir21"
+          "topic": "building_iot/piano3/device/presence/pir70"
         }
       },
       "config": [
         {
-          "device": "pir21",
+          "device": "pir70",
           "tz": "now()",
           "presence": "integer(0, 1)",
-          "secret": "#6AF050"
+          "secret": "#2F2B45"
         }
       ]
     },
@@ -249,15 +89,15 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano8/device/light/light80"
+          "topic": "building_iot/piano3/device/light/light43"
         }
       },
       "config": [
         {
-          "device": "light80",
+          "device": "light43",
           "tz": "now()",
           "light": "boolean()",
-          "secret": "#C883FF"
+          "secret": "#A84E9F"
         }
       ]
     },
@@ -265,15 +105,15 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano9/device/presence/pir80"
+          "topic": "building_iot/piano4/device/presence/pir91"
         }
       },
       "config": [
         {
-          "device": "pir80",
+          "device": "pir91",
           "tz": "now()",
           "presence": "integer(0, 1)",
-          "secret": "#59D89C"
+          "secret": "#EEBDCA"
         }
       ]
     },
@@ -281,15 +121,15 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano9/device/light/light66"
+          "topic": "building_iot/piano4/device/light/light36"
         }
       },
       "config": [
         {
-          "device": "light66",
+          "device": "light36",
           "tz": "now()",
           "light": "boolean()",
-          "secret": "#4196F5"
+          "secret": "#3D5A3E"
         }
       ]
     },
@@ -297,15 +137,15 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano10/device/presence/pir77"
+          "topic": "building_iot/piano5/device/presence/pir79"
         }
       },
       "config": [
         {
-          "device": "pir77",
+          "device": "pir79",
           "tz": "now()",
           "presence": "integer(0, 1)",
-          "secret": "#439E7C"
+          "secret": "#B6A0A3"
         }
       ]
     },
@@ -313,15 +153,15 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano10/device/light/light90"
+          "topic": "building_iot/piano5/device/light/light62"
         }
       },
       "config": [
         {
-          "device": "light90",
+          "device": "light62",
           "tz": "now()",
           "light": "boolean()",
-          "secret": "#1B9BB4"
+          "secret": "#92A07D"
         }
       ]
     },
@@ -329,15 +169,15 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano11/device/presence/pir71"
+          "topic": "building_iot/piano6/device/presence/pir18"
         }
       },
       "config": [
         {
-          "device": "pir71",
+          "device": "pir18",
           "tz": "now()",
           "presence": "integer(0, 1)",
-          "secret": "#8C26D7"
+          "secret": "#048D38"
         }
       ]
     },
@@ -345,15 +185,15 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano11/device/light/light42"
+          "topic": "building_iot/piano6/device/light/light89"
         }
       },
       "config": [
         {
-          "device": "light42",
+          "device": "light89",
           "tz": "now()",
           "light": "boolean()",
-          "secret": "#55553C"
+          "secret": "#F50D1F"
         }
       ]
     },
@@ -361,15 +201,15 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano12/device/presence/pir89"
+          "topic": "building_iot/piano7/device/presence/pir61"
         }
       },
       "config": [
         {
-          "device": "pir89",
+          "device": "pir61",
           "tz": "now()",
           "presence": "integer(0, 1)",
-          "secret": "#CBB9E6"
+          "secret": "#B23A5E"
         }
       ]
     },
@@ -377,7 +217,135 @@
       "duration": 0,
       "producerConfig": {
         "mqtt": {
-          "topic": "building_iot/piano12/device/light/light22"
+          "topic": "building_iot/piano7/device/light/light85"
+        }
+      },
+      "config": [
+        {
+          "device": "light85",
+          "tz": "now()",
+          "light": "boolean()",
+          "secret": "#884679"
+        }
+      ]
+    },
+    {
+      "duration": 0,
+      "producerConfig": {
+        "mqtt": {
+          "topic": "building_iot/piano8/device/presence/pir40"
+        }
+      },
+      "config": [
+        {
+          "device": "pir40",
+          "tz": "now()",
+          "presence": "integer(0, 1)",
+          "secret": "#259F18"
+        }
+      ]
+    },
+    {
+      "duration": 0,
+      "producerConfig": {
+        "mqtt": {
+          "topic": "building_iot/piano8/device/light/light36"
+        }
+      },
+      "config": [
+        {
+          "device": "light36",
+          "tz": "now()",
+          "light": "boolean()",
+          "secret": "#DBFFE1"
+        }
+      ]
+    },
+    {
+      "duration": 0,
+      "producerConfig": {
+        "mqtt": {
+          "topic": "building_iot/piano9/device/presence/pir35"
+        }
+      },
+      "config": [
+        {
+          "device": "pir35",
+          "tz": "now()",
+          "presence": "integer(0, 1)",
+          "secret": "#38D780"
+        }
+      ]
+    },
+    {
+      "duration": 0,
+      "producerConfig": {
+        "mqtt": {
+          "topic": "building_iot/piano9/device/light/light63"
+        }
+      },
+      "config": [
+        {
+          "device": "light63",
+          "tz": "now()",
+          "light": "boolean()",
+          "secret": "#4F19C3"
+        }
+      ]
+    },
+    {
+      "duration": 0,
+      "producerConfig": {
+        "mqtt": {
+          "topic": "building_iot/piano10/device/presence/pir92"
+        }
+      },
+      "config": [
+        {
+          "device": "pir92",
+          "tz": "now()",
+          "presence": "integer(0, 1)",
+          "secret": "#A3FF1E"
+        }
+      ]
+    },
+    {
+      "duration": 0,
+      "producerConfig": {
+        "mqtt": {
+          "topic": "building_iot/piano10/device/light/light63"
+        }
+      },
+      "config": [
+        {
+          "device": "light63",
+          "tz": "now()",
+          "light": "boolean()",
+          "secret": "#D184FF"
+        }
+      ]
+    },
+    {
+      "duration": 0,
+      "producerConfig": {
+        "mqtt": {
+          "topic": "building_iot/piano11/device/presence/pir13"
+        }
+      },
+      "config": [
+        {
+          "device": "pir13",
+          "tz": "now()",
+          "presence": "integer(0, 1)",
+          "secret": "#68BB29"
+        }
+      ]
+    },
+    {
+      "duration": 0,
+      "producerConfig": {
+        "mqtt": {
+          "topic": "building_iot/piano11/device/light/light22"
         }
       },
       "config": [
@@ -385,7 +353,39 @@
           "device": "light22",
           "tz": "now()",
           "light": "boolean()",
-          "secret": "#70B450"
+          "secret": "#8E65BC"
+        }
+      ]
+    },
+    {
+      "duration": 0,
+      "producerConfig": {
+        "mqtt": {
+          "topic": "building_iot/piano12/device/presence/pir38"
+        }
+      },
+      "config": [
+        {
+          "device": "pir38",
+          "tz": "now()",
+          "presence": "integer(0, 1)",
+          "secret": "#3D00D8"
+        }
+      ]
+    },
+    {
+      "duration": 0,
+      "producerConfig": {
+        "mqtt": {
+          "topic": "building_iot/piano12/device/light/light14"
+        }
+      },
+      "config": [
+        {
+          "device": "light14",
+          "tz": "now()",
+          "light": "boolean()",
+          "secret": "#CDF86E"
         }
       ]
     }
