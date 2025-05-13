@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "eventFrequency": 4000,
   "varyEventFrequency": true,
@@ -391,3 +392,6 @@
     }
   ]
 }
+=======
+{}
+>>>>>>> refs/remotes/origin/main
