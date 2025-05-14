@@ -8,6 +8,11 @@ https://docs.google.com/spreadsheets/d/1syRAWjqPiGaL4PPioYeZfwIz0RsDVU3RtZWYAlFo
 ## IP dinamico del server in ascolto delle REST API
 http://146.190.206.106:8185/
 
+
+## Link con docs API
+http://146.190.206.106:8185/docs 
+
+
 ## Features
 
 - Floor management
