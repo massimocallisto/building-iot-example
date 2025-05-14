@@ -2,6 +2,12 @@
 
 A FastAPI-based REST API for managing IoT devices in a building. The system allows you to manage devices across different floors in an open space layout.
 
+## Google Docs fiel per ripartizione piani
+https://docs.google.com/spreadsheets/d/1syRAWjqPiGaL4PPioYeZfwIz0RsDVU3RtZWYAlFo9Ws/edit?gid=0#gid=0
+
+## IP dinamico del server in ascolto delle REST API
+http://146.190.206.106:8185/
+
 ## Features
 
 - Floor management
